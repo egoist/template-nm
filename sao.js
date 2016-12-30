@@ -32,12 +32,10 @@ module.exports = {
   filters: {
     'test.js': 'unitTest'
   },
-  post({chalk, isNewFolder, folderName}) {
-    console.log(`\n  ${chalk.green('done!')}`)
+  post({chalk, isNewFolder, folderName, log}) {
+    log.success('Done, let the hacking begin!')
     if (isNewFolder) {
       console.log(`  cd ${chalk.yellow(folderName)} to get started!\n`)
-    } else {
-      console.log()
     }
   }
 }
