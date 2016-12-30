@@ -45,6 +45,10 @@ module.exports = {
         'standard',
         'disable'
       ]
+    },
+    twitter: {
+      message: 'What is your twitter username?',
+      store: true
     }
   },
   filters: {
