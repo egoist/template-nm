@@ -13,7 +13,7 @@ Install [SAO](https://github.com/egoist/sao) first.
 ### From git
 
 ```bash
-sao EGOIST/template-nm
+sao egoist/template-nm
 ```
 
 ### From npm
