@@ -1,6 +1,10 @@
-# template-nm
+<h1 align="center">template-nm</h1>
 
-> Scaffolding out a node module.
+<p align="center">
+  Scaffolding out a node module.
+</p>
+
+<img src="./media/preview.png" alt="preview">
 
 ## Features
 
