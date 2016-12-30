@@ -1,0 +1,17 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "repository": {
+    "url": "<%= username %>/<%= name %>",
+    "type": "git"
+  },
+  "scripts": {
+    "test": <% if (unitTest) { %>"ava"<% } else { %>"echo 'no tests!'"<% } %>
+  },
+  "author": "<%= username %> <<%= email %>>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
