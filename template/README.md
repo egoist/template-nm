@@ -19,4 +19,4 @@ const <%= this.camelcase(name) %> = require('<%= name %>')
 
 ## License
 
-MIT &copy; <%= username %>
+MIT &copy; [<%= username %>](<%= website %>)

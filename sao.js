@@ -18,11 +18,20 @@ module.exports = {
     },
     username: {
       message: 'What is your GitHub username?',
-      role: 'git:name'
+      role: 'git:name',
+      store: true
     },
     email: {
       message: 'What is your GitHub email?',
-      role: 'git:email'
+      role: 'git:email',
+      store: true
+    },
+    website: {
+      message: 'What is the url of your website?',
+      default(answers) {
+        return `https://github.com/${answers.username}`
+      },
+      store: true
     },
     unitTest: {
       message: 'Do you need unit test?',
