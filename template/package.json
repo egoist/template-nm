@@ -17,5 +17,10 @@
     "ava": "^0.17.0"<% if (eslint === 'xo') { %>,
     "xo": "^0.17.1"<% } else if (eslint === 'standard') { %>,
     "standard": "^8.6.0"<% } %>
+  }<% if (eslint === 'xo') { %>,
+  "xo": {
+    "space": 2,
+    "semicolon": false
   }
+  <% } %>
 }
