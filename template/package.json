@@ -7,11 +7,15 @@
     "type": "git"
   },
   "scripts": {
-    "test": <% if (unitTest) { %>"ava"<% } else { %>"echo 'no tests!'"<% } %>
+    "test": "<% if (unitTest) { %>ava<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
+    "lint": "<%= eslint %>"
+    <% } %>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.17.0"
+    "ava": "^0.17.0"<% if (eslint === 'xo') { %>,
+    "xo": "^0.17.1"<% } else if (eslint === 'standard') { %>,
+    "standard": "^8.6.0"<% } %>
   }
 }

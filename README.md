@@ -9,6 +9,7 @@
 ## Features
 
 - Unit test with [AVA](https://github.com/avajs/ava)
+- ESLint with [xo](https://github.com/sindresorhus/xo) or [standard](https://github.com/feross/standard)
 
 ## Usage
 

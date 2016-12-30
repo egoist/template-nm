@@ -27,6 +27,15 @@ module.exports = {
     unitTest: {
       message: 'Do you need unit test?',
       type: 'confirm'
+    },
+    eslint: {
+      message: 'Choose a eslint tool',
+      type: 'list',
+      choices: [
+        'xo',
+        'standard',
+        'disable'
+      ]
     }
   },
   filters: {
