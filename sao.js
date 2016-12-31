@@ -54,8 +54,10 @@ module.exports = {
   filters: {
     'test.js': 'unitTest'
   },
-  post({chalk, isNewFolder, folderName, log}) {
+  post({chalk, isNewFolder, folderName, log, install, init}) {
     log.success('Done, let the hacking begin!')
+    install()
+    init()
     if (isNewFolder) {
       console.log(`  cd ${chalk.yellow(folderName)} to get started!\n`)
     }
