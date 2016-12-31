@@ -1,7 +1,8 @@
 <% const camelcasedName = this.camelcase(name) -%>
+<% const normalUserName = username.toLowerCase() -%>
 # <%= name %>
 
-[![NPM version](https://img.shields.io/npm/v/<%= name %>.svg?style=flat-square)](https://npmjs.com/package/<%= name %>) [![NPM downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![Build Status](https://img.shields.io/circleci/project/<%= username %>/<%= name %>/master.svg?style=flat)](https://circleci.com/gh/<%= username %>/<%= name %>) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/<%= username %>/donate)
+[![NPM version](https://img.shields.io/npm/v/<%= name %>.svg?style=flat-square)](https://npmjs.com/package/<%= name %>) [![NPM downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![Build Status](https://img.shields.io/circleci/project/<%= normalUserName %>/<%= name %>/master.svg?style=flat)](https://circleci.com/gh/<%= username %>/<%= name %>) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/<%= normalUserName %>/donate)
 
 ## Install
 
@@ -29,7 +30,7 @@ const <%= camelcasedName %> = require('<%= name %>')
 
 ## Author
 
-**<%= name %>** © [<%= username %>](https://github.com/<%= username %>), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by <%= username %> with help from contributors ([list](https://github.com/<%= username %>/<%= name %>/contributors)).
+**<%= name %>** © [<%= username %>](https://github.com/<%= normalUserName %>), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by <%= username %> with help from contributors ([list](https://github.com/<%= normalUserName %>/<%= name %>/contributors)).
 
-> [<%= website.replace(/^https?:\/\//, '') %>](<%= website %>) · GitHub [@<%= username %>](https://github.com/<%= username%>)<% if (twitter) { %> · Twitter [@<%= twitter %>](https://twitter.com/<%= twitter %>)<% } %>
+> [<%= website.replace(/^https?:\/\//, '') %>](<%= website %>) · GitHub [@<%= username %>](https://github.com/<%= normalUserName%>)<% if (twitter) { %> · Twitter [@<%= twitter %>](https://twitter.com/<%= twitter %>)<% } %>
