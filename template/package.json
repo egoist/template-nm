@@ -6,10 +6,14 @@
     "url": "<%= username %>/<%= name %>",
     "type": "git"
   },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "<% if (unitTest) { %>ava<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"
-    <% } %>
+    <% } -%>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
@@ -22,5 +26,5 @@
     "space": 2,
     "semicolon": false
   }
-  <% } %>
+  <% } -%>
 }
