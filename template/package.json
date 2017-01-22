@@ -13,7 +13,7 @@
   "scripts": {
     "test": "<% if (unitTest) { %>ava<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"
-    <% } -%>
+    <%_ } -%>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
@@ -26,5 +26,5 @@
     "space": 2,
     "semicolon": false
   }
-  <% } -%>
+  <%_ } -%>
 }
