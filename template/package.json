@@ -22,14 +22,13 @@
     "testEnvironment": "node"
   },
   <%_ } -%>
-  "devDependencies": {
-    "jest-cli": "^18.1.0"<% if (eslint === 'xo') { %>,
+  "devDependencies": {<% if (unitTest) { %>
+    "jest-cli": "^18.1.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
     "xo": "^0.17.1"<% } else if (eslint === 'standard') { %>,
     "standard": "^8.6.0"<% } %>
   }<% if (eslint === 'xo') { %>,
   "xo": {
     "space": 2,
     "semicolon": false
-  }
-  <%_ } -%>
+  }<%_ } %>
 }
