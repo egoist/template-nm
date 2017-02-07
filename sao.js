@@ -52,7 +52,7 @@ module.exports = {
     }
   },
   filters: {
-    '__test__/**': 'unitTest'
+    'test/**': 'unitTest'
   },
   post({chalk, isNewFolder, folderName, log, install, init}) {
     install()
