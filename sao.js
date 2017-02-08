@@ -54,6 +54,9 @@ module.exports = {
   filters: {
     'test/**': 'unitTest'
   },
+  move: {
+    'gitignore': '.gitignore'
+  },
   post({chalk, isNewFolder, folderName, log, install, init}) {
     install()
     init()
