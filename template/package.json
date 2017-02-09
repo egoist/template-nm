@@ -29,6 +29,9 @@
   }<% if (eslint === 'xo') { %>,
   "xo": {
     "space": 2,
-    "semicolon": false
-  }<%_ } %>
+    "semicolon": false<% if (unitTest) { %>,
+    "envs": [
+      "jest"
+    ]
+  }<%_ }} %>
 }
