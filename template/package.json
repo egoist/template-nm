@@ -12,8 +12,7 @@
   ],
   "scripts": {
     "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
-    "lint": "<%= eslint %>"
-    <%_ } %>
+    "lint": "<%= eslint %>"<%_ } %>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
