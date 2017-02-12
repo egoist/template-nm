@@ -31,6 +31,6 @@
     "semicolon": false<% if (unitTest) { %>,
     "envs": [
       "jest"
-    ]
-  }<%_ }} %>
+    ]<% } %>
+  }<%_ } %>
 }
