@@ -11,6 +11,7 @@
 - Unit test with [jest](https://facebook.github.io/jest/)
 - ESLint with [xo](https://github.com/sindresorhus/xo) or [standard](https://github.com/feross/standard)
 - CircleCI with [Yarn](yarnpkg.com) support
+- Optionally compile ES2015 code using [bili](https://github.com/unipahq/bili)
 
 ## Usage
 

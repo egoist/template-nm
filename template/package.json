@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
-    "lint": "<%= eslint %>"<%_ } %>
+    "lint": "<%= eslint %>"<% } %><% if (compile) { %>,
+    "build": "bili"<% } %>
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
@@ -21,10 +22,23 @@
     "testEnvironment": "node"
   },
   <%_ } -%>
+  <%_ if (compile && unitTest) { -%>
+  "babel": {
+    "env": {
+      "test": {
+        "presets": ["es2015"]
+      }
+    }
+  },
+  <%_ } -%>
   "devDependencies": {<% if (unitTest) { %>
     "jest-cli": "^18.1.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
     "xo": "^0.17.1"<% } else if (eslint === 'standard') { %>,
-    "standard": "^8.6.0"<% } %>
+    "standard": "^8.6.0"<% } %><% if (compile) { %>,
+    <%_ if (unitTest) { -%>
+    "babel-preset-es2015": "^6.22.0",
+    <%_ } -%>
+    "bili": "^0.14.0"<% } %>
   }<% if (eslint === 'xo') { %>,
   "xo": {
     "space": 2,

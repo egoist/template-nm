@@ -46,13 +46,20 @@ module.exports = {
         'disable'
       ]
     },
+    compile: {
+      message: 'Do you need to compile ES2015 code?',
+      type: 'confirm',
+      default: false
+    },
     twitter: {
       message: 'What is your twitter username?',
       store: true
     }
   },
   filters: {
-    'test/**': 'unitTest'
+    'test/**': 'unitTest',
+    'src/**': 'compile',
+    'index.js': '!compile'
   },
   move: {
     'gitignore': '.gitignore'
