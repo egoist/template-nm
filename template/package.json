@@ -8,7 +8,7 @@
   },
   "main": <% if (compile) { %>"dist/index.common.js"<% } else { %>"index.js"<% } %>,
   "files": [
-    "index.js"
+    <% if (compile) { %>"dist"<% } else { %>"index.js"<% } %>
   ],
   "scripts": {<% if (coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>
