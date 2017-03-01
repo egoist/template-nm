@@ -37,6 +37,12 @@ module.exports = {
       message: 'Do you need unit test?',
       type: 'confirm'
     },
+    coverage: {
+      message: 'Do you want to add coverage port?',
+      type: 'confirm',
+      default: false,
+      when: answers => answers.unitTest
+    },
     eslint: {
       message: 'Choose a eslint tool',
       type: 'list',
