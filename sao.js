@@ -71,7 +71,7 @@ module.exports = {
     'gitignore': '.gitignore'
   },
   post({chalk, isNewFolder, folderName, log, install, init}) {
-    install()
+    // install()
     init()
     log.success('Done, let the hacking begin!')
     if (isNewFolder) {
