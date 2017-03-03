@@ -12,7 +12,7 @@
   ],
   "scripts": {<% if (unitTest && coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>
-    "test": "<% if (eslint !== 'disable') { %> npm run lint<% } %><% if (compile) { %> <% if (eslint !== 'disable') { %> && <% } %> npm run build<% } %><% if (eslint !== 'disable' || compile) { %> && <% } %><% if (unitTest) { %> jest<% } else { %>echo 'no tests!'<% } %>"<% if (eslint !== 'disable') { %>,
+    "test": "<% if (eslint !== 'disable') { %> npm run lint<% } %><% if (compile) { %> <% if (eslint !== 'disable') { %> && <% } %>npm run build<% } %><% if (eslint !== 'disable' || compile) { %> && <% } %><% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"<% } %><% if (compile) { %>,
     "build": "bili --name index"<% } %>
   },
