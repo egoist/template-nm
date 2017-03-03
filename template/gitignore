@@ -4,6 +4,6 @@ node_modules
 <%_ if (compile) { -%>
 dist/
 <%_ } -%>
-<%_ if (coverage) { -%>
+<%_ if (unitTest && coverage) { -%>
 coverage/
 <%_ } -%>
