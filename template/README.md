@@ -2,7 +2,7 @@
 <% const normalUserName = username.toLowerCase() -%>
 # <%= name %>
 
-[![NPM version](https://img.shields.io/npm/v/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![NPM downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![Build Status](https://img.shields.io/circleci/project/<%= normalUserName %>/<%= name %>/master.svg?style=flat)](https://circleci.com/gh/<%= username %>/<%= name %>)<% if (coverage) { %> [![codecov](https://codecov.io/gh/<%= username %>/<%= name %>/branch/master/graph/badge.svg)](https://codecov.io/gh/<%= username %>/<%= name %>)
+[![NPM version](https://img.shields.io/npm/v/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![NPM downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![CircleCI](https://circleci.com/gh/<%= normalUserName %>/<%= name %>/tree/master.svg?style=shield)](https://circleci.com/gh/<%= normalUserName %>/<%= name %>/tree/master) <% if (coverage) { %> [![codecov](https://codecov.io/gh/<%= normalUserName %>/<%= name %>/branch/master/graph/badge.svg)](https://codecov.io/gh/<%= username %>/<%= name %>)
 <% } %> [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/<%= normalUserName %>/donate)
 
 ## Install
