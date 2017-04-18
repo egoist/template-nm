@@ -1,6 +1,6 @@
 {
   "name": "template-nm",
-  "version": "0.12.3",
+  "version": "0.12.4",
   "description": "Scaffolding out a node module.",
   "repository": {
     "url": "EGOIST/template-nm",
