@@ -13,7 +13,7 @@ module.exports = {
       role: 'folder:name'
     },
     description: {
-      message: 'How would you descripe the new project?',
+      message: 'How would you describe the new project?',
       default: `my ${superb()} project`
     },
     username: {
