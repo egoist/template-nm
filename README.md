@@ -20,18 +20,18 @@
 
 ## Usage
 
-Install [template-nm](https://github.com/egoist/template-nm) first.
+Install [SAO](https://github.com/egoist/sao) first.
 
 ### From git
 
 ```bash
-template-nm egoist/template-nm
+sao egoist/template-nm
 ```
 
 ### From npm
 
-```bash
-template-nm nm
+```bash 
+sao nm
 ```
 
 ## License
