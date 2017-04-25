@@ -2639,9 +2639,9 @@ sane@~1.5.0:
     walker "~1.0.5"
     watch "~0.10.0"
 
-sao@egoist/sao#a04b370:
-  version "0.16.12"
-  resolved "https://codeload.github.com/egoist/sao/tar.gz/a04b370"
+sao@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/sao/-/sao-0.17.0.tgz#f8afb505f7f16c0eb7cf961f6887aea2ec177318"
   dependencies:
     cac "^3.0.4"
     chalk "^1.1.3"
