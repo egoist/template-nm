@@ -42,7 +42,7 @@
     "jest-cli": "^19.0.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
     "eslint-config-rem": "^3.0.0",
     "xo": "^0.18.0"<% } else if (eslint === 'standard') { %>,
-    "standard": "^8.6.0"<% } %><% if (compile) { %>,
+    "standard": "^10.0.0"<% } %><% if (compile) { %>,
     <%_ if (unitTest) { -%>
     "babel-preset-env": "^1.4.0",
     <%_ } -%>
