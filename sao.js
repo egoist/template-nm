@@ -46,6 +46,7 @@ module.exports = {
     eslint: {
       message: 'Choose a eslint tool',
       type: 'list',
+      default: 'xo',
       choices: [
         'xo',
         'standard',
