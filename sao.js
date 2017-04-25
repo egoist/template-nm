@@ -24,7 +24,8 @@ module.exports = {
     email: {
       message: 'What is your GitHub email?',
       role: 'git:email',
-      store: true
+      store: true,
+      validate: v => /.+@.+/.test(v)
     },
     website: {
       message: 'What is the url of your website?',

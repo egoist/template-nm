@@ -11,7 +11,7 @@ it('add unit test', () => {
     eslint: 'disable',
     compile: false,
     username: 'test',
-    email: 'test'
+    email: 'test@test.com'
   }).then(files => {
     expect(files['test/index.test.js']).toBeDefined()
 
@@ -28,7 +28,7 @@ it('add coverage', () => {
     eslint: 'disable',
     compile: false,
     username: 'test',
-    email: 'test'
+    email: 'test@test.com'
   }).then(files => {
     expect(files['circle.yml'].contents.toString()).toMatch('bash <(curl -s https://codecov.io/bash)')
     expect(files['circle.yml'].contents.toString()).toMatch('yarn test:cov')
