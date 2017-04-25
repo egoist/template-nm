@@ -10,7 +10,9 @@
     "test": "jest test.js --env=node"
   },
   "jest": {
-    "testPathIgnorePatterns": ["/template/"]
+    "testPathIgnorePatterns": [
+      "/template/"
+    ]
   },
   "author": "EGOIST <0x142857@gmail.com>",
   "license": "MIT",
@@ -24,6 +26,6 @@
   },
   "devDependencies": {
     "jest": "^19.0.2",
-    "sao": "egoist/sao#029f6ee9b7"
+    "sao": "egoist/sao#a04b370"
   }
 }
