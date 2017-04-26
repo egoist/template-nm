@@ -17,6 +17,7 @@
 - CircleCI with [Yarn](yarnpkg.com) support
 - Optionally compile ES2015 code using [bili](https://github.com/unipahq/bili)
 - Optionally add coverage report
+- Optionally add CLI
 
 ## Usage
 

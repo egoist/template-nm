@@ -7,6 +7,7 @@
     "type": "git"
   },
   "main": <% if (compile) { %>"dist/index.common.js"<% } else { %>"index.js"<% } %>,
+  <% if (cli) { %>"bin": "cli.js", <% } %>
   "files": [
     <% if (compile) { %>"dist"<% } else { %>"index.js"<% } %>
   ],
@@ -37,6 +38,9 @@
       }
     }
   },
+  <% if (cli) { %>"dependencies": {
+    "yargs": "^7.1.0"
+  }, <% } %>
   <%_ } -%>
   "devDependencies": {<% if (unitTest) { %>
     "jest-cli": "^19.0.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
