@@ -59,5 +59,8 @@ it('add cli', () => {
     cli: true
   }).then(files => {
     expect(files['cli.js']).toBeDefined()
+
+    const pkg = JSON.parse(files['package.json'].contents.toString())
+    expect(pkg.dependencies.yargs).toBeDefined()
   })
 })
