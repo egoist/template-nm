@@ -13,7 +13,17 @@ it('add unit test', () => {
     username: 'test',
     email: 'test@test.com'
   }).then(files => {
-    expect(files['test/index.test.js']).toBeDefined()
+    expect(Object.keys(files)).toEqual([
+      '.editorconfig',
+      '.gitattributes',
+      'LICENSE',
+      'README.md',
+      'circle.yml',
+      'index.js',
+      'package.json',
+      'test/index.test.js',
+      '.gitignore',
+    ])
 
     const pkg = JSON.parse(files['package.json'].contents.toString())
     expect(pkg.scripts.test).toBe('jest')
@@ -35,5 +45,19 @@ it('add coverage', () => {
 
     const pkg = JSON.parse(files['package.json'].contents.toString())
     expect(pkg.scripts['test:cov']).toBe('jest --coverage')
+  })
+})
+
+it('add cli', () => {
+  return sao.mockPrompt(template, {
+    unitTest: true,
+    coverage: true,
+    eslint: 'disable',
+    compile: false,
+    username: 'test',
+    email: 'test@test.com',
+    cli: true
+  }).then(files => {
+    expect(files['cli.js']).toBeDefined()
   })
 })
