@@ -59,6 +59,12 @@ module.exports = {
       type: 'confirm',
       default: false
     },
+    cli: {
+      message: 'Do you want to add a CLI?',
+      type: 'confirm',
+      default: false,
+      when: answers => !answers.compile
+    },
     twitter: {
       message: 'What is your twitter username?',
       store: true
@@ -67,7 +73,8 @@ module.exports = {
   filters: {
     'test/**': 'unitTest',
     'src/**': 'compile',
-    'index.js': '!compile'
+    'index.js': '!compile',
+    'cli.js': 'cli'
   },
   move: {
     'gitignore': '.gitignore'
