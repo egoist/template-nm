@@ -12,8 +12,8 @@ dependencies:
 
 test:
   override:
-    - yarn <% if (coverage) { %>test:cov<% } else { %>test<% } %>
-  <%_ if (coverage) { -%>
+    - yarn <% if (unitTest && coverage) { %>test:cov<% } else { %>test<% } %>
+  <%_ if (unitTest && coverage) { -%>
   post:
     - bash <(curl -s https://codecov.io/bash)
   <%_ } -%>
