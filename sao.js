@@ -83,7 +83,7 @@ module.exports = {
     'gitignore': '.gitignore'
   },
   post(ctx) {
-    .install() // install dependencies
+    ctx.install() // install dependencies
     ctx.init() // git init
     ctx.log.success('Done, let the hacking begin!')
     if (ctx.isNewFolder) {

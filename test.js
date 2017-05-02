@@ -13,7 +13,7 @@ it('add unit test', () => {
     username: 'test',
     email: 'test@test.com'
   }).then(files => {
-    expect(Object.keys(files)).toEqual([
+    expect(Object.keys(files).sort()).toEqual([
       '.editorconfig',
       '.gitattributes',
       'LICENSE',
@@ -23,7 +23,7 @@ it('add unit test', () => {
       'package.json',
       'test/index.test.js',
       '.gitignore',
-    ])
+    ].sort())
 
     const pkg = JSON.parse(files['package.json'].contents.toString())
     expect(pkg.scripts.test).toBe('jest')
