@@ -77,14 +77,17 @@ module.exports = {
     'cli.js': 'cli'
   },
   move: {
+    // We keep `.gitignore` as `gitignore` in the project
+    // Because when it's published to npm
+    // `.gitignore` file will be ignored!
     'gitignore': '.gitignore'
   },
-  post({chalk, isNewFolder, folderName, log, install, init}) {
-    install()
-    init()
-    log.success('Done, let the hacking begin!')
-    if (isNewFolder) {
-      console.log(`  cd ${chalk.yellow(folderName)} to get started!\n`)
+  post(ctx) {
+    .install() // install dependencies
+    ctx.init() // git init
+    ctx.log.success('Done, let the hacking begin!')
+    if (ctx.isNewFolder) {
+      ctx.log.info(`cd ${ctx.chalk.yellow(ctx.folderName)} to get started!`)
     }
   }
 }
