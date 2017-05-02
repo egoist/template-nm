@@ -12,8 +12,8 @@ it('add unit test', () => {
     compile: false,
     username: 'test',
     email: 'test@test.com'
-  }).then(files => {
-    expect(Object.keys(files).sort()).toEqual([
+  }).then(({ fileList, files }) => {
+    expect(fileList).toEqual([
       '.editorconfig',
       '.gitattributes',
       'LICENSE',
@@ -39,7 +39,7 @@ it('add coverage', () => {
     compile: false,
     username: 'test',
     email: 'test@test.com'
-  }).then(files => {
+  }).then(({ files }) => {
     expect(files['circle.yml'].contents.toString()).toMatch('bash <(curl -s https://codecov.io/bash)')
     expect(files['circle.yml'].contents.toString()).toMatch('yarn test:cov')
 
@@ -57,7 +57,7 @@ it('add cli', () => {
     username: 'test',
     email: 'test@test.com',
     cli: true
-  }).then(files => {
+  }).then(({ files }) => {
     expect(files['cli.js']).toBeDefined()
 
     const pkg = JSON.parse(files['package.json'].contents.toString())
