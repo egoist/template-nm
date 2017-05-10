@@ -82,12 +82,7 @@ module.exports = {
     // `.gitignore` file will be ignored!
     'gitignore': '.gitignore'
   },
-  post(ctx) {
-    ctx.install() // install dependencies
-    ctx.init() // git init
-    ctx.log.success('Done, let the hacking begin!')
-    if (ctx.isNewFolder) {
-      ctx.log.info(`cd ${ctx.chalk.yellow(ctx.folderName)} to get started!`)
-    }
-  }
+  showTip: true,
+  installDependencies: true,
+  gitInit: true
 }
