@@ -9,7 +9,8 @@
   "main": <% if (compile) { %>"dist/index.common.js"<% } else { %>"index.js"<% } %>,
   <% if (cli) { %>"bin": "cli.js", <% } %>
   "files": [
-    <% if (compile) { %>"dist"<% } else { %>"index.js"<% } %>
+    <% if (compile) { %>"dist"<% } else { %>"index.js"<% } %><% if (cli) { %>,
+    "cli.js"<% } %>
   ],
   "scripts": {<% if (coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>

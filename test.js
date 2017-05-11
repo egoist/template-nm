@@ -62,5 +62,6 @@ it('add cli', () => {
 
     const pkg = JSON.parse(files['package.json'].contents.toString())
     expect(pkg.dependencies.yargs).toBeDefined()
+    expect(pkg.files).toContain('cli.js')
   })
 })
