@@ -10,7 +10,7 @@ module.exports = {
   prompts: {
     name: {
       message: 'What is the name of the new project?',
-      role: 'folder:name'
+      default: ':folderName:'
     },
     description: {
       message: 'How would you describe the new project?',
@@ -18,12 +18,12 @@ module.exports = {
     },
     username: {
       message: 'What is your GitHub username?',
-      role: 'git:name',
+      default: ':gitUser:',
       store: true
     },
     email: {
       message: 'What is your GitHub email?',
-      role: 'git:email',
+      default: ':gitEmail:',
       store: true,
       validate: v => /.+@.+/.test(v)
     },
@@ -36,7 +36,8 @@ module.exports = {
     },
     unitTest: {
       message: 'Do you need unit test?',
-      type: 'confirm'
+      type: 'confirm',
+      default: false
     },
     coverage: {
       message: 'Do you want to add coverage port?',
@@ -48,11 +49,7 @@ module.exports = {
       message: 'Choose a eslint tool',
       type: 'list',
       default: 'xo',
-      choices: [
-        'xo',
-        'standard',
-        'disable'
-      ]
+      choices: ['xo', 'standard', 'disable']
     },
     compile: {
       message: 'Do you need to compile ES2015 code?',
@@ -80,7 +77,7 @@ module.exports = {
     // We keep `.gitignore` as `gitignore` in the project
     // Because when it's published to npm
     // `.gitignore` file will be ignored!
-    'gitignore': '.gitignore'
+    gitignore: '.gitignore'
   },
   showTip: true,
   installDependencies: true,
