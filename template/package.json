@@ -51,11 +51,10 @@
     <%_ if (unitTest) { -%>
     "babel-preset-env": "^1.4.0",
     <%_ } -%>
-    "bili": "^0.14.0"<% } %>
+    "bili": "^0.15.0"<% } %>
   }<% if (eslint === 'xo') { %>,
   "xo": {
-    "extends": "rem",
-    "esnext": true<% if (unitTest) { %>,
+    "extends": "rem"<% if (unitTest) { %>,
     "envs": [
       "jest"
     ]<% } %>
