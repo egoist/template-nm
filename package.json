@@ -1,6 +1,6 @@
 {
   "name": "template-nm",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "description": "Scaffolding out a node module.",
   "repository": {
     "url": "EGOIST/template-nm",
@@ -23,7 +23,9 @@
   ],
   "xo": {
     "extends": "rem/prettier",
-    "envs": ["jest"]
+    "envs": [
+      "jest"
+    ]
   },
   "dependencies": {
     "camelcase": "^4.0.0",
