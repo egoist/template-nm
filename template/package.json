@@ -14,8 +14,9 @@
   ],
   "scripts": {<% if (coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>
-    "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %><% if (compile) { %> && npm run build<% } %>"<% if (eslint !== 'disable') { %>,
+    "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"<% } %><% if (compile) { %>,
+    "prepublish": "npm run build",
     "build": "bili --name index"<% } %>
   },
   "author": "<%= username %> <<%= email %>>",
@@ -51,7 +52,7 @@
     <%_ if (unitTest) { -%>
     "babel-preset-env": "^1.4.0",
     <%_ } -%>
-    "bili": "^0.15.0"<% } %>
+    "bili": "^0.16.0-rc.2"<% } %>
   }<% if (eslint === 'xo') { %>,
   "xo": {
     "extends": "rem"<% if (unitTest) { %>,
