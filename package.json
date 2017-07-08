@@ -34,7 +34,7 @@
   "devDependencies": {
     "eslint-config-rem": "^3.1.0",
     "jest": "^20.0.4",
-    "sao": "^0.20.0",
+    "sao": "egoist/sao#fix/ci",
     "xo": "^0.18.2"
   }
 }
