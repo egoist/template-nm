@@ -24,10 +24,10 @@ it('add unit test', () => {
     .mockPrompt(template, {
       unitTest: true
     })
-    .then(({ fileList, files }) => {
-      expect(fileList).toContain('test/index.test.js')
+    .then(stream => {
+      expect(stream.fileList).toContain('test/index.test.js')
 
-      const pkg = JSON.parse(files['package.json'].contents.toString())
+      const pkg = JSON.parse(stream.fileContents('package.json'))
       expect(pkg.scripts.test).toBe('jest && npm run lint')
       expect(pkg.devDependencies).toHaveProperty('jest-cli')
     })
@@ -39,13 +39,13 @@ it('add coverage', () => {
       unitTest: true,
       coverage: true
     })
-    .then(({ files }) => {
-      expect(files['circle.yml'].contents.toString()).toMatch(
+    .then(stream => {
+      expect(stream.fileContents('circle.yml')).toMatch(
         'bash <(curl -s https://codecov.io/bash)'
       )
-      expect(files['circle.yml'].contents.toString()).toMatch('yarn test:cov')
+      expect(stream.fileContents('circle.yml')).toMatch('yarn test:cov')
 
-      const pkg = JSON.parse(files['package.json'].contents.toString())
+      const pkg = JSON.parse(stream.fileContents('package.json'))
       expect(pkg.scripts['test:cov']).toBe('jest --coverage && npm run lint')
     })
 })
@@ -55,10 +55,10 @@ it('add cli', () => {
     .mockPrompt(template, {
       cli: true
     })
-    .then(({ fileList, files }) => {
-      expect(fileList).toContain('cli.js')
+    .then(stream => {
+      expect(stream.fileList).toContain('cli.js')
 
-      const pkg = JSON.parse(files['package.json'].contents.toString())
+      const pkg = JSON.parse(stream.fileContents('package.json'))
       expect(pkg.dependencies).toHaveProperty('yargs')
       expect(pkg.files).toContain('cli.js')
     })
