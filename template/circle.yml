@@ -1,19 +1,29 @@
-machine:
-  node:
-    version: 7
-  environment:
-    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-
-dependencies:
-  override:
-    - yarn
-  cache_directories:
-    - ~/.cache/yarn
-
-test:
-  override:
-    - yarn <% if (coverage) { %>test:cov<% } else { %>test<% } %>
-  <%_ if (coverage) { -%>
-  post:
-    - bash <(curl -s https://codecov.io/bash)
-  <%_ } -%>
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:8.0.0
+    branches:
+      ignore:
+        - gh-pages # list of branches to ignore
+        - /release\/.*/ # or ignore regexes
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: install dependences
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: yarn <% if (coverage) { %>test:cov<% } else { %>test<% } %>
+      <%_ if (coverage) { -%>
+      - run:
+          name: upload coverage
+          command: bash <(curl -s https://codecov.io/bash)
+      <%_ } -%>
