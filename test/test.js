@@ -59,10 +59,10 @@ test('yarn: unit test', async t => {
   t.snapshot(stream.fileList)
 })
 
-test('support browser library', async t => {
+test('support poi', async t => {
   const stream = await sao.mockPrompt(template, {
     compile: true,
-    browser: true
+    poi: true
   })
   t.snapshot(stream.fileList)
   t.snapshot(

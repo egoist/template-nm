@@ -62,10 +62,10 @@ module.exports = {
       type: 'confirm',
       default: false
     },
-    browser: {
+    poi: {
       type: 'confirm',
       default: false,
-      message: 'Is it a browser library (Use egoist/poi to run and build example)',
+      message: 'Use egoist/poi to run and build example',
       when: answers => answers.compile
     },
     cli: {
@@ -86,7 +86,7 @@ module.exports = {
     'cli.js': 'cli',
     'circle-npm5.yml': 'pm === "npm5"',
     'circle-yarn.yml': 'pm === "yarn"',
-    'example/**': 'browser'
+    'example/**': 'poi'
   },
   move: {
     // We keep `.gitignore` as `gitignore` in the project

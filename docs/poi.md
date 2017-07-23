@@ -1,9 +1,9 @@
-# Browser Library
+# Poi
 
-You can generate a browser library:
+You can use Poi to run the example if your app supposed to work in browser too:
 
 - [x] Select `Do you need to compile ES2015 code?`
-- [x] Select `Is it a browser library`
+- [x] Select `Use egoist/poi to run and build example`
 
 Then you will get 4 addtional npm scripts:
 
