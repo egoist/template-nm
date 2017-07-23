@@ -52,7 +52,7 @@ module.exports = {
       when: answers => answers.unitTest
     },
     eslint: {
-      message: 'Choose a eslint tool',
+      message: 'Choose an eslint tool',
       type: 'list',
       default: 'xo',
       choices: ['xo', 'standard', 'disable']
