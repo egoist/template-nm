@@ -8,7 +8,7 @@
 ## Install
 
 ```bash
-yarn add <%= name %>
+<% if (pm === 'yarn') { %>yarn add<% } else { %>npm i<% } %> <%= name %>
 ```
 
 ## Usage
