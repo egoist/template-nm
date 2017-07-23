@@ -43,7 +43,7 @@ it('add coverage', () => {
       expect(stream.fileContents('circle.yml')).toMatch(
         'bash <(curl -s https://codecov.io/bash)'
       )
-      expect(stream.fileContents('circle.yml')).toMatch('yarn test:cov')
+      expect(stream.fileContents('circle.yml')).toMatch('npm run test:cov')
 
       const pkg = JSON.parse(stream.fileContents('package.json'))
       expect(pkg.scripts['test:cov']).toBe('jest --coverage && npm run lint')
