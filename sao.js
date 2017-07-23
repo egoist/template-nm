@@ -96,6 +96,7 @@ module.exports = {
     'circle-*.yml': 'circle.yml'
   },
   showTip: true,
-  installDependencies: true,
+  // Prefer npm 5 over yarn over npm 4
+  npmInstall: true,
   gitInit: true
 }
