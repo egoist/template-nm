@@ -46,7 +46,7 @@ module.exports = {
       default: false
     },
     coverage: {
-      message: 'Do you want to add coverage port?',
+      message: 'Do you want to add test coverage support?',
       type: 'confirm',
       default: false,
       when: answers => answers.unitTest
