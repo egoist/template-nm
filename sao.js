@@ -65,7 +65,7 @@ module.exports = {
     browser: {
       type: 'confirm',
       default: false,
-      message: 'Is it a browser library',
+      message: 'Is it a browser library (Use egoist/poi to run and build example)',
       when: answers => answers.compile
     },
     cli: {
