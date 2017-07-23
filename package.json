@@ -7,8 +7,8 @@
     "type": "git"
   },
   "scripts": {
-    "test": "jest test.js --env=node",
-    "lint": "xo *.js"
+    "test": "ava test/test.js && npm run lint",
+    "lint": "xo *.js test/*.js"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -22,18 +22,15 @@
     "template"
   ],
   "xo": {
-    "extends": "rem/prettier",
-    "envs": [
-      "jest"
-    ]
+    "extends": "rem/prettier"
   },
   "dependencies": {
     "camelcase": "^4.0.0",
     "superb": "^1.3.0"
   },
   "devDependencies": {
+    "ava": "^0.21.0",
     "eslint-config-rem": "^3.1.0",
-    "jest": "^20.0.4",
     "sao": "^0.20.1",
     "xo": "^0.18.2"
   }

@@ -34,6 +34,12 @@ module.exports = {
       },
       store: true
     },
+    pm: {
+      message: 'Choose a package manager',
+      choices: ['npm5', 'yarn'],
+      type: 'list',
+      default: 'npm5'
+    },
     unitTest: {
       message: 'Do you need unit test?',
       type: 'confirm',
@@ -71,13 +77,16 @@ module.exports = {
     'test/**': 'unitTest',
     'src/**': 'compile',
     'index.js': '!compile',
-    'cli.js': 'cli'
+    'cli.js': 'cli',
+    'circle-npm5.yml': 'pm === "npm5"',
+    'circle-yarn.yml': 'pm === "yarn"'
   },
   move: {
     // We keep `.gitignore` as `gitignore` in the project
     // Because when it's published to npm
     // `.gitignore` file will be ignored!
-    gitignore: '.gitignore'
+    gitignore: '.gitignore',
+    'circle-*.yml': 'circle.yml'
   },
   showTip: true,
   installDependencies: true,
