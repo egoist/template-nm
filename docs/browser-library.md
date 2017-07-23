@@ -5,7 +5,7 @@ You can generate a browser library:
 - [x] Select `Do you need to compile ES2015 code?`
 - [x] Select `Is it a browser library`
 
-Then you will get addtional npm scripts:
+Then you will get 5 addtional npm scripts:
 
 - `npm run example`: Run `example/index.js` with [Poi](https://github.com/egoist/poi)
 - `npm run build:example`: Build `example/index.js` to `example/dist` folder with Poi.
