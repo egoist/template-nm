@@ -58,3 +58,18 @@ test('yarn: unit test', async t => {
   t.snapshot(config)
   t.snapshot(stream.fileList)
 })
+
+test('support browser library', async t => {
+  const stream = await sao.mockPrompt(template, {
+    compile: true,
+    browser: true
+  })
+  t.snapshot(stream.fileList)
+  t.snapshot(
+    getPkg(stream.fileContents('package.json'), [
+      'scripts',
+      'poi',
+      'devDependencies'
+    ])
+  )
+})

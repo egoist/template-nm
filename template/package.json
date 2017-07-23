@@ -17,10 +17,21 @@
     "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"<% } %><% if (compile) { %>,
     "prepublish": "npm run build",
-    "build": "bili --filename index"<% } %>
+    "build": "bili --filename index"<% } %><% if (browser) { %>,
+    "example": "poi",
+    "build:example": "poi build",
+    "gh": "gh-pages -d example/dist",
+    "deploy": "npm run build:example && npm run gh"
+    <% } %>
   },
   "author": "<%= username %> <<%= email %>>",
-  "license": "MIT",
+  "license": "MIT",<% if (browser) { %>
+  "poi": {
+    "entry": "example/index.js",
+    "dist": "example/dist",
+    "homepage": "/"
+  },
+  <%_ } -%>
   <%_ if (unitTest) { -%>
   "jest": {
     "testEnvironment": "node"
@@ -41,9 +52,9 @@
     }
   },
   <%_ } -%>
-  "dependencies": {
-    <% if (cli) { %>"yargs": "^7.1.0"<% } %>
-  },
+  "dependencies": {<% if (cli) { %>
+    "yargs": "^7.1.0"
+  <% } %>},
   "devDependencies": {<% if (unitTest) { %>
     "jest-cli": "^19.0.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
     "eslint-config-rem": "^3.0.0",
@@ -51,6 +62,10 @@
     "standard": "^10.0.0"<% } %><% if (compile) { %><% if (eslint !== 'disable' || unitTest) { %>,<% } %>
     <%_ if (unitTest) { -%>
     "babel-preset-env": "^1.4.0",
+    <%_ } -%>
+    <%_ if (browser) { -%>
+    "gh-pages": "^1.0.0",
+    "poi": "^9.1.4",
     <%_ } -%>
     "bili": "^0.17.0"<% } %>
   }<% if (eslint === 'xo') { %>,
