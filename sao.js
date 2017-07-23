@@ -95,8 +95,15 @@ module.exports = {
     gitignore: '.gitignore',
     'circle-*.yml': 'circle.yml'
   },
-  showTip: true,
-  // Prefer npm 5 over yarn over npm 4
-  npmInstall: true,
-  gitInit: true
+  post(ctx, stream) {
+    ctx.gitInit()
+
+    if (stream.meta.answers.pm === 'yarn') {
+      ctx.yarnInstall()
+    } else {
+      ctx.npmInstall()
+    }
+
+    ctx.showTip()
+  }
 }
