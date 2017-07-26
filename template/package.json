@@ -14,7 +14,7 @@
   ],
   "scripts": {<% if (coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>
-    "test": "<% if (unitTest) { %>jest<% } else { %>echo 'no tests!'<% } %><% if (eslint !== 'disable') { %> && npm run lint<% } %>"<% if (eslint !== 'disable') { %>,
+    "test": "<% if (eslint !== 'disable') { %>npm run lint<% } %><% if (unitTest) { %> && jest<% } else { %> && echo 'no tests!'<% } %>"<% if (eslint !== 'disable') { %>,
     "lint": "<%= eslint %>"<% } %><% if (compile) { %>,
     "prepublish": "npm run build",
     "build": "bili --filename index"<% } %><% if (poi) { %>,
