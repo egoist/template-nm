@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 'use strict'
-const yargs = require('yargs')
-const pkg = require('./package')
+const cac = require('cac')
 const main = require('./')
 
-const argv = yargs
-  .version(pkg.version)
-  .help()
-  .argv
+const cli = cac()
 
-main(argv)
+cli.command('*', 'My Default Command', (input, flags) => {
+  main(input, flags)
+})
+
+cli.parse()

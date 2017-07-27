@@ -53,7 +53,7 @@
   },
   <%_ } -%>
   "dependencies": {<% if (cli) { %>
-    "yargs": "^7.1.0"
+    "cac": "^4.0.0"
   <% } %>},
   "devDependencies": {<% if (unitTest) { %>
     "jest-cli": "^19.0.0"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>

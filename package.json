@@ -7,7 +7,7 @@
     "type": "git"
   },
   "scripts": {
-    "test": "ava test/test.js && npm run lint",
+    "test": "ava && npm run lint",
     "lint": "xo *.js test/*.js"
   },
   "jest": {
@@ -23,6 +23,9 @@
   ],
   "xo": {
     "extends": "rem/prettier"
+  },
+  "ava": {
+    "files": ["test/test*.js"]
   },
   "dependencies": {
     "camelcase": "^4.0.0",
