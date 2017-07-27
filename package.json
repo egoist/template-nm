@@ -1,6 +1,6 @@
 {
   "name": "template-nm",
-  "version": "0.17.5",
+  "version": "0.17.6",
   "description": "Scaffolding out a node module.",
   "repository": {
     "url": "EGOIST/template-nm",
@@ -25,7 +25,9 @@
     "extends": "rem/prettier"
   },
   "ava": {
-    "files": ["test/test*.js"]
+    "files": [
+      "test/test*.js"
+    ]
   },
   "dependencies": {
     "camelcase": "^4.0.0",
