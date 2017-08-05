@@ -9,26 +9,31 @@ module.exports = {
   },
   prompts: {
     name: {
-      message: 'What is the name of the new project?',
+      message: 'What is the name of the new project',
       default: ':folderName:'
     },
     description: {
-      message: 'How would you describe the new project?',
+      message: 'How would you describe the new project',
       default: `my ${superb()} project`
     },
+    author: {
+      message: 'What is your name',
+      default: ':gitUser:',
+      store: true
+    },
     username: {
-      message: 'What is your GitHub username?',
+      message: 'What is you GitHub username',
       default: ':gitUser:',
       store: true
     },
     email: {
-      message: 'What is your GitHub email?',
+      message: 'What is your GitHub email',
       default: ':gitEmail:',
       store: true,
       validate: v => /.+@.+/.test(v)
     },
     website: {
-      message: 'What is the url of your website?',
+      message: 'What is the url of your website',
       default(answers) {
         return `https://github.com/${answers.username}`
       },
