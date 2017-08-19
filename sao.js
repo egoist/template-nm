@@ -22,7 +22,7 @@ module.exports = {
       store: true
     },
     username: {
-      message: 'What is you GitHub username',
+      message: 'What is your GitHub username',
       default: ':gitUser:',
       store: true
     },
