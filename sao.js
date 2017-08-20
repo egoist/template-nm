@@ -100,10 +100,10 @@ module.exports = {
     gitignore: '.gitignore',
     'circle-*.yml': 'circle.yml'
   },
-  post(ctx) {
+  post(ctx, stream) {
     ctx.gitInit()
 
-    if (ctx.answers.pm === 'yarn') {
+    if (stream.meta.answers.pm === 'yarn') {
       // yarn (or fallbacks to) npm5 (or fallbacks to) npm
       ctx.yarnInstall()
     } else {
