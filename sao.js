@@ -104,8 +104,10 @@ module.exports = {
     ctx.gitInit()
 
     if (ctx.answers.pm === 'yarn') {
+      // yarn (or fallbacks to) npm5 (or fallbacks to) npm
       ctx.yarnInstall()
     } else {
+      // npm5 (or fallbacks to) yarn (or fallbacks to) npm
       ctx.npmInstall()
     }
 
