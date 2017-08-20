@@ -103,6 +103,7 @@ module.exports = {
   post(ctx, stream) {
     ctx.gitInit()
 
+    // You can also use `ctx.answers` in SAO^0.21.4
     if (stream.meta.answers.pm === 'yarn') {
       // yarn (or fallbacks to) npm5 (or fallbacks to) npm
       ctx.yarnInstall()
