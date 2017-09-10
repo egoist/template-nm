@@ -1,8 +1,9 @@
+import path from 'path'
 import test from 'ava'
 import sao from 'sao'
 
 const template = {
-  fromPath: process.cwd()
+  fromPath: path.join(__dirname, '..)
 }
 
 const getPkg = (pkg, fields) => {
