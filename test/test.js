@@ -3,7 +3,7 @@ import test from 'ava'
 import sao from 'sao'
 
 const template = {
-  fromPath: path.join(__dirname, '..)
+  fromPath: path.join(__dirname, '..')
 }
 
 const getPkg = (pkg, fields) => {
