@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/repo
     docker:
       - image: circleci/node:latest
     branches:
