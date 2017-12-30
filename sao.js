@@ -85,7 +85,6 @@ module.exports = {
     },
     donateUrl: {
       message: 'The URL where users can donate to your project',
-      default: '',
       store: true
     }
   },
