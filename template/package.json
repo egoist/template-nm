@@ -19,9 +19,7 @@
     "prepublish": "npm run build",
     "build": "bili"<% } %><% if (poi) { %>,
     "example": "poi",
-    "build:example": "poi build",
-    "gh": "gh-pages -d example/dist",
-    "deploy": "npm run build:example && npm run gh"
+    "build:example": "poi build"
     <% } %>
   },
   "author": "<%= username %> <<%= email %>>",
@@ -64,7 +62,6 @@
     "babel-preset-env": "^1.4.0",
     <%_ } -%>
     <%_ if (poi) { -%>
-    "gh-pages": "^1.0.0",
     "poi": "^9.1.4",
     <%_ } -%>
     "bili": "^1.3.1"<% } %>
