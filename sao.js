@@ -82,6 +82,11 @@ module.exports = {
     twitter: {
       message: 'What is your twitter username?',
       store: true
+    },
+    donateUrl: {
+      message: 'The URL where users can donate to your project',
+      default: '',
+      store: true
     }
   },
   filters: {

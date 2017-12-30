@@ -74,3 +74,11 @@ test('support poi', async t => {
     ])
   )
 })
+
+test('donateUrl', async t => {
+  const stream = await sao.mockPrompt(template, {
+    donateUrl: 'http://donate.com'
+  })
+  t.snapshot(stream.fileList)
+  t.snapshot(getPkg(stream.fileContents('package.json'), ['scripts']))
+})
