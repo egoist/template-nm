@@ -85,7 +85,9 @@ module.exports = {
     },
     donateUrl: {
       message: 'The URL where users can donate to your project',
-      store: true
+      store: true,
+      default: 'none',
+      filter: v => (/^https?:\/\//.test(v) ? v : 'none')
     }
   },
   filters: {
