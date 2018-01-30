@@ -10,7 +10,8 @@
   <% if (cli) { %>"bin": "cli.js", <% } %>
   "files": [
     <% if (compile) { %>"dist"<% } else { %>"index.js"<% } %><% if (cli) { %>,
-    "cli.js"<% } %>
+    "cli.js"<% } %><% if (types) { %>,
+    "types/*.d.ts",<% } %>
   ],
   "scripts": {<% if (coverage) { %>
     "test:cov": "jest --coverage<% if (eslint !== 'disable') { %> && npm run lint<% } %>",<% } %>
@@ -73,5 +74,7 @@
     "envs": [
       "jest"
     ]<% } %>
-  }<%_ } %>
+  }<%_ } %><% if (types) { %>,
+  "typings": "types/index.d.ts",
+  <% } %>
 }
