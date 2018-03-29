@@ -3,7 +3,7 @@
 # <%= name %>
 
 [![NPM version](https://img.shields.io/npm/v/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![NPM downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat)](https://npmjs.com/package/<%= name %>) [![CircleCI](https://circleci.com/gh/<%= username %>/<%= name %>/tree/master.svg?style=shield)](https://circleci.com/gh/<%= username %>/<%= name %>/tree/master) <% if (coverage) { %> [![codecov](https://codecov.io/gh/<%= username %>/<%= name %>/branch/master/graph/badge.svg)](https://codecov.io/gh/<%= username %>/<%= name %>)
-<% } %> [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/<%= username %>/donate)<% if (username === 'egoist') { %> [![chat](https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat)](https://chat.egoist.moe)<% } %>
+<% } %><% if (donateUrl !== 'none') { %>[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/<%= username %>/donate)<% } %><% if (username === 'egoist') { %> [![chat](https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat)](https://chat.egoist.moe)<% } %>
 
 ## Install
 
