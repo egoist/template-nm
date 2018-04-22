@@ -11,31 +11,26 @@
     "lint": "xo *.js test/*.js"
   },
   "jest": {
-    "testPathIgnorePatterns": [
+    "modulePathIgnorePatterns": [
       "/template/"
     ]
   },
   "author": "EGOIST <0x142857@gmail.com>",
   "license": "MIT",
   "files": [
-    "sao.js",
+    "saofile.js",
     "template"
   ],
   "xo": {
     "extends": "rem/prettier"
-  },
-  "ava": {
-    "files": [
-      "test/test*.js"
-    ]
   },
   "dependencies": {
     "camelcase": "^4.0.0",
     "superb": "^1.3.0"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
     "eslint-config-rem": "^3.2.0",
+    "jest": "^22.4.3",
     "sao": "^0.21.5",
     "xo": "^0.18.2"
   }

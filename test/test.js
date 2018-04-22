@@ -1,10 +1,7 @@
-import path from 'path'
-import test from 'ava'
-import sao from 'sao'
+const path = require('path')
+const sao = require('sao')
 
-const template = {
-  fromPath: path.join(__dirname, '..')
-}
+const generator = path.join(__dirname, '..')
 
 const getPkg = (pkg, fields) => {
   pkg = JSON.parse(pkg)
@@ -14,71 +11,65 @@ const getPkg = (pkg, fields) => {
   }, {})
 }
 
-test('use defaults', async t => {
-  const { fileList } = await sao.mockPrompt(template, {})
-  t.snapshot(fileList)
+test('use defaults', async () => {
+  const helper = await sao.mockPrompt(generator, {})
+  expect(helper.fileList).toMatchSnapshot()
 })
 
-test('npm5: add unit test', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('npm5: add unit test', async () => {
+  const helper = await sao.mockPrompt(generator, {
     unitTest: true
   })
 
-  t.snapshot(stream.fileList)
-  t.snapshot(
-    getPkg(stream.fileContents('package.json'), ['scripts', 'devDependencies'])
-  )
+  expect(helper.fileList).toMatchSnapshot()
+  expect(getPkg(helper.readFile('package.json'), ['scripts', 'devDependencies'])).toMatchSnapshot()
 })
 
-test('npm5: add coverage', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('npm5: add coverage', async () => {
+  const helper = await sao.mockPrompt(generator, {
     unitTest: true,
     coverage: true
   })
 
-  t.snapshot(stream.fileList)
-  t.snapshot(stream.fileContents('circle.yml'))
+  expect(helper.fileList).toMatchSnapshot()
+  expect(helper.readFile('circle.yml')).toMatchSnapshot()
 })
 
-test('add cli', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('add cli', async () => {
+  const helper = await sao.mockPrompt(generator, {
     cli: true
   })
-  t.snapshot(stream.fileList)
-  t.snapshot(
-    getPkg(stream.fileContents('package.json'), ['bin', 'dependencies'])
-  )
+  expect(helper.fileList).toMatchSnapshot()
+  expect(getPkg(helper.readFile('package.json'), ['bin', 'dependencies'])).toMatchSnapshot()
 })
 
-test('yarn: unit test', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('yarn: unit test', async () => {
+  const helper = await sao.mockPrompt(generator, {
     unitTest: true,
     pm: 'yarn'
   })
-  const config = stream.fileContents('circle.yml')
-  t.snapshot(config)
-  t.snapshot(stream.fileList)
+  const config = helper.readFile('circle.yml')
+  expect(config).toMatchSnapshot()
+  expect(helper.fileList).toMatchSnapshot()
 })
 
-test('support poi', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('support poi', async () => {
+  const helper = await sao.mockPrompt(generator, {
     compile: true,
     poi: true
   })
-  t.snapshot(stream.fileList)
-  t.snapshot(
-    getPkg(stream.fileContents('package.json'), [
-      'scripts',
-      'poi',
-      'devDependencies'
-    ])
-  )
+  expect(helper.fileList).toMatchSnapshot()
+  expect(getPkg(helper.readFile('package.json'), [
+    'scripts',
+    'poi',
+    'devDependencies'
+  ])).toMatchSnapshot()
 })
 
-test('donateUrl', async t => {
-  const stream = await sao.mockPrompt(template, {
+test('donateUrl', async () => {
+  const helper = await sao.mockPrompt(generator, {
     donateUrl: 'http://donate.com'
   })
-  t.snapshot(stream.fileList)
-  t.snapshot(getPkg(stream.fileContents('package.json'), ['scripts']))
+  expect(helper.fileList).toMatchSnapshot()
+  expect(getPkg(helper.readFile('package.json'), ['scripts'])).toMatchSnapshot()
 })
