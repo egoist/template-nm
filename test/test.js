@@ -14,6 +14,10 @@ const getPkg = (pkg, fields) => {
   }, {})
 }
 
+const getReadmeContents = stream => {
+  return stream.files['README.md'].contents.toString()
+}
+
 test('use defaults', async t => {
   const { fileList } = await sao.mockPrompt(template, {})
   t.snapshot(fileList)
@@ -81,4 +85,30 @@ test('donateUrl', async t => {
   })
   t.snapshot(stream.fileList)
   t.snapshot(getPkg(stream.fileContents('package.json'), ['scripts']))
+})
+
+test('private node modules', async t => {
+  const stream = await sao.mockPrompt(template, {
+    name: '@egoist/front-matter',
+    username: 'egoist'
+  })
+  t.true(
+    getReadmeContents(stream).includes(
+      'https://circleci.com/gh/egoist/front-matter/tree/master'
+    )
+  )
+  t.snapshot(stream.fileList)
+})
+
+test('primary node modules', async t => {
+  const stream = await sao.mockPrompt(template, {
+    name: 'template-nm',
+    username: 'egoist'
+  })
+  t.true(
+    getReadmeContents(stream).includes(
+      'https://circleci.com/gh/egoist/template-nm/tree/master'
+    )
+  )
+  t.snapshot(stream.fileList)
 })
