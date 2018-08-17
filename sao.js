@@ -45,6 +45,11 @@ module.exports = {
       type: 'list',
       default: 'npm5'
     },
+    travis: {
+      message: 'Do you need Travis CI',
+      type: 'confirm',
+      default: true
+    },
     unitTest: {
       message: 'Do you need unit test?',
       type: 'confirm',
@@ -97,6 +102,7 @@ module.exports = {
     'cli.js': 'cli',
     'circle-npm5.yml': 'pm === "npm5"',
     'circle-yarn.yml': 'pm === "yarn"',
+    '.travis.yml': 'travis',
     'example/**': 'poi'
   },
   move: {
