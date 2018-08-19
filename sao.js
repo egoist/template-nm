@@ -48,6 +48,7 @@ module.exports = {
     },
     ci: {
       message: 'Choose a continuous integration solution',
+      choices: ['circleci', 'travis'],
       type: 'list',
       default: 'circleci',
       store: true
