@@ -50,6 +50,11 @@ module.exports = {
       type: 'confirm',
       default: true
     },
+    ci: {
+      message: 'Choose a continuous integration solution',
+      type: 'list',
+      default: 'circleci'
+    },
     unitTest: {
       message: 'Do you need unit test?',
       type: 'confirm',
@@ -100,9 +105,9 @@ module.exports = {
     'src/**': 'compile',
     'index.js': '!compile',
     'cli.js': 'cli',
-    'circle-npm5.yml': 'pm === "npm5"',
-    'circle-yarn.yml': 'pm === "yarn"',
-    '.travis.yml': 'travis',
+    'circle-npm5.yml': 'ci === "circleci" && pm === "npm5"',
+    'circle-yarn.yml': 'ci === "circleci" && pm === "yarn"',
+    '.travis.yml': 'ci === "travis"',
     'example/**': 'poi'
   },
   move: {
