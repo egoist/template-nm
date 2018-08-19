@@ -43,17 +43,14 @@ module.exports = {
       message: 'Choose a package manager',
       choices: ['npm5', 'yarn'],
       type: 'list',
-      default: 'npm5'
-    },
-    travis: {
-      message: 'Do you need Travis CI',
-      type: 'confirm',
-      default: true
+      default: 'npm5',
+      store: true
     },
     ci: {
       message: 'Choose a continuous integration solution',
       type: 'list',
-      default: 'circleci'
+      default: 'circleci',
+      store: true
     },
     unitTest: {
       message: 'Do you need unit test?',
