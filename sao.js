@@ -93,7 +93,7 @@ module.exports = {
     types: {
       message: 'Do you want to add a Type Definition by TypeScript?',
       type: 'confirm',
-      default: false,
+      default: false
     },
     twitter: {
       message: 'What is your twitter username?',
