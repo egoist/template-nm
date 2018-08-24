@@ -46,7 +46,15 @@ module.exports = {
       message: 'Choose a package manager',
       choices: ['npm5', 'yarn'],
       type: 'list',
-      default: 'npm5'
+      default: 'npm5',
+      store: true
+    },
+    ci: {
+      message: 'Choose a continuous integration solution',
+      choices: ['circleci', 'travis'],
+      type: 'list',
+      default: 'circleci',
+      store: true
     },
     unitTest: {
       message: 'Do you need unit test?',
@@ -103,8 +111,9 @@ module.exports = {
     'src/**': 'compile',
     'index.js': '!compile',
     'cli.js': 'cli',
-    'circle-npm5.yml': 'pm === "npm5"',
-    'circle-yarn.yml': 'pm === "yarn"',
+    'circle-npm5.yml': 'ci === "circleci" && pm === "npm5"',
+    'circle-yarn.yml': 'ci === "circleci" && pm === "yarn"',
+    '.travis.yml': 'ci === "travis"',
     'example/**': 'poi',
     'types/**': 'types'
   },

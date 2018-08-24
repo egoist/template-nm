@@ -59,7 +59,7 @@
   "devDependencies": {<% if (unitTest) { %>
     "jest-cli": "^22.1.4"<% } %><% if (eslint === 'xo') { %><% if (unitTest) { %>,<% } %>
     "eslint-config-rem": "^3.0.0",
-    "xo": "^0.18.0"<% } else if (eslint === 'standard') { %>,
+    "xo": "^0.18.0"<% } else if (eslint === 'standard') { %><% if (unitTest) { %>,<% } %>
     "standard": "^10.0.0"<% } %><% if (compile) { %><% if (eslint !== 'disable' || unitTest) { %>,<% } %>
     <%_ if (unitTest) { -%>
     "babel-preset-env": "^1.4.0",
