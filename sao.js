@@ -4,7 +4,10 @@ const camelcase = require('camelcase')
 module.exports = {
   templateOptions: {
     context: {
-      camelcase
+      camelcase,
+      capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+      }
     }
   },
   prompts: {
@@ -87,6 +90,11 @@ module.exports = {
       default: false,
       when: answers => !answers.compile
     },
+    types: {
+      message: 'Do you want to add a Type Definition by TypeScript?',
+      type: 'confirm',
+      default: false,
+    },
     twitter: {
       message: 'What is your twitter username?',
       store: true
@@ -106,7 +114,8 @@ module.exports = {
     'circle-npm5.yml': 'ci === "circleci" && pm === "npm5"',
     'circle-yarn.yml': 'ci === "circleci" && pm === "yarn"',
     '.travis.yml': 'ci === "travis"',
-    'example/**': 'poi'
+    'example/**': 'poi',
+    'types/**': 'types'
   },
   move: {
     // We keep `.gitignore` as `gitignore` in the project
